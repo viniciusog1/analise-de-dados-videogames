@@ -3,6 +3,7 @@
 Nesse projeto iremos trabalhar com o conjunto de dados [Video Game Sales](https://www.kaggle.com/datasets/gregorut/videogamesales) dísponivel no [Kaggle](https://www.kaggle.com/datasets), uma excelente plataforma para encontrar datasets gratuitos e utiliza-lós para a manipulação de dados!
 
 Ao abrir o arquivo **_vgsales.csv_** as informações não são de facil entendimento, a estrutura das informações parece desorganizada.
+
 ![raw_vgsales](/images/raw_vgsales.png/)
 
 Nesse projeto será utilizado o [Google Collab](https://colab.research.google.com/) para realizar a análise em questão.
