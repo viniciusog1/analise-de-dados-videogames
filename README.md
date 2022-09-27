@@ -70,8 +70,46 @@ df.drop(df[df['Global_Sales'] <= 0.99].index, inplace = True)
 df['Global_Sales'] = df['Global_Sales'].round(0).astype(int)
 ```
 
-A coluna ano está representando um **float**, precisamos realizar a conversão para **int**.
+A coluna ano está representando um **float**, precisamos realizar a conversão para **int** e apagar os anos zerados.
 
 ```
 df['Year'] = df['Year'].astype(int)
+df.drop(df[df['Year'] == 0].index, inplace = True)
 ```
+
+Nesse momento terminamos nossa fase de tratamento dos dados, e agora iremos começar a agrupar as informações de maneira relevante para conseguirmos ter 'insights' com as informações disponíveis.
+
+Vamos visualizar os 5 primeiros resultados da nossa tabela.
+
+![display_df_head](/images/display_df_head.png/)
+
+Agora nosso dataframe está bem mais intuitivo e compreensivo! Vamos identificar quais são as plataformas, publisher, genêro e ano que mais venderam, para isso é necessário criar cada agrupamento desejado de maneira separada e somar os valores.
+
+![groupby_columns](/images/groupby_columns.png/)
+
+Agora iremos análisar cada grupo criado, realizar a criação de gráficos e entender o que cada análise pode mostrar através de dados.
+#
+Análise das 5 plataformas mais vendidas.
+
+![line_graph_platform](/images/line_graph_platform.png/)
+
+Podemos notar que o PS2 foi o console mais vendido, com pouca diferença do segundo colocado que foi o Xbox! Em seguida temos Wii, PS3 e DS.
+#
+Análise das 5 publisher's mais vendidas.
+
+![line_graph_publisher](/images/line_graph_publisher.png/)
+
+A Nintendo foi a publisher mais vendida no período da análise, tendo mais que o dobro de número de vendas do segundo colocado, Eletronic Arts!
+#
+Análise dos 5 genêros mais vendidos.
+
+![line_graph_genre](/images/line_graph_genre.png/)
+
+Em 1º lugar com o maior número de vendas temos o genêro Action! Os genêros, Sports e Shooter, Platform e Role-Playing possuem pouca diferença de vendas globais!
+#
+Análise de todos os anos.
+
+![line_graph_year](/images/line_graph_year.png/)
+
+Podemos notar um gráfico crescente ao longo dos anos, poucas vendas globais do ano 1980 até o ano 1995 e apartir disso as vendas aumentam bastante! Sendo o ano de 2008 com o maior número de vendas globais! 
+#
